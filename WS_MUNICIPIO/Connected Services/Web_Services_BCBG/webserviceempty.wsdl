@@ -1,0 +1,2137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarImagenTalentoHumano">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="image" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="imagename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ext" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idrecurso_humano" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarImagenTalentoHumanoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GuardarImagenTalentoHumanoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarImagenPublicaciones">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="image" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="imagename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ext" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idPublicacion" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarImagenPublicacionesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GuardarImagenPublicacionesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarImagenEmergencias">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="image" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="imagename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ext" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idEmergencia" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarImagenEmergenciasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GuardarImagenEmergenciasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarImagenInspecciones">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="image" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="imagename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ext" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarImagenInspeccionesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GuardarImagenInspeccionesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarImagenFichaVoluntario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="image" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="imagename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ext" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CurseName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idVoluntario" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarImagenFichaVoluntarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GuardarImagenFichaVoluntarioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarPDFGenerico">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pathPrincipal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="image" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="docname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ext" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="key" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarPDFGenericoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GuardarPDFGenericoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarArchivosDIP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pathPrincipal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="file_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contenido" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarArchivosDIPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GuardarArchivosDIPResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarPDFProcedimientos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="image" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="imagename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ext" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idProcedimiento" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarPDFProcedimientosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GuardarPDFProcedimientosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarFileTemp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="image" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="imagename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ext" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="key" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarFileTempResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GuardarFileTempResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarImagenProcedimientos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="image" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="imagename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ext" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idProcedimiento" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarImagenProcedimientosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GuardarImagenProcedimientosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarImagenFormulariosFSO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="image" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="imagename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ext" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idFormulario" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarImagenFormulariosFSOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GuardarImagenFormulariosFSOResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarImagenFormulariosArch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="image" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="imagename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ext" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idFormulario" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarImagenFormulariosArchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GuardarImagenFormulariosArchResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarImagen">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="image" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="imagename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ext" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoDoc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idEstablecimiento" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IdDeclaracion" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarImagenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GuardarImagenResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarPDFEstablecimientos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="image" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="imagename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dir_anio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dir_mes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dir_dia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ext" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoDoc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idEstablecimiento" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarPDFEstablecimientosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GuardarPDFEstablecimientosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarImagenXModificacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="image" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="imagename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dir_anio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dir_mes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dir_dia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ext" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoDoc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idEstablecimiento" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IdDeclaracion" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarImagenXModificacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GuardarImagenXModificacionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownloadFileResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadFileGenerico">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NameApp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadFileGenericoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownloadFileGenericoResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserNameXIdPrevencion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idusuario" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserNameXIdPrevencionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserNameXIdPrevencionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIdUsuarioPrevencion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cedula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIdUsuarioPrevencionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetIdUsuarioPrevencionResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ActualizaEstadoOrdenCompra">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="num_orden" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="new_estado" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizaEstadoOrdenCompraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ActualizaEstadoOrdenCompraResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsPerfilVoluntario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cedula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsPerfilVoluntarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ConsPerfilVoluntarioResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerarDirectorio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerarDirectorioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GenerarDirectorioResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CopiarContenidoDirectorio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sourceFile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destFile" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CopiarContenidoDirectorioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CopiarContenidoDirectorioResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="base64Binary" nillable="true" type="s:base64Binary" />
+      <s:element name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+      <s:element name="boolean" type="s:boolean" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenTalentoHumanoSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarImagenTalentoHumano" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenTalentoHumanoSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarImagenTalentoHumanoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenPublicacionesSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarImagenPublicaciones" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenPublicacionesSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarImagenPublicacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenEmergenciasSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarImagenEmergencias" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenEmergenciasSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarImagenEmergenciasResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenInspeccionesSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarImagenInspecciones" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenInspeccionesSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarImagenInspeccionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenFichaVoluntarioSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarImagenFichaVoluntario" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenFichaVoluntarioSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarImagenFichaVoluntarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardarPDFGenericoSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarPDFGenerico" />
+  </wsdl:message>
+  <wsdl:message name="GuardarPDFGenericoSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarPDFGenericoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardarArchivosDIPSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarArchivosDIP" />
+  </wsdl:message>
+  <wsdl:message name="GuardarArchivosDIPSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarArchivosDIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardarPDFProcedimientosSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarPDFProcedimientos" />
+  </wsdl:message>
+  <wsdl:message name="GuardarPDFProcedimientosSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarPDFProcedimientosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardarFileTempSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarFileTemp" />
+  </wsdl:message>
+  <wsdl:message name="GuardarFileTempSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarFileTempResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenProcedimientosSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarImagenProcedimientos" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenProcedimientosSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarImagenProcedimientosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenFormulariosFSOSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarImagenFormulariosFSO" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenFormulariosFSOSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarImagenFormulariosFSOResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenFormulariosArchSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarImagenFormulariosArch" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenFormulariosArchSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarImagenFormulariosArchResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarImagen" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarImagenResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardarPDFEstablecimientosSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarPDFEstablecimientos" />
+  </wsdl:message>
+  <wsdl:message name="GuardarPDFEstablecimientosSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarPDFEstablecimientosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenXModificacionSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarImagenXModificacion" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenXModificacionSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarImagenXModificacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFileSoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadFile" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFileSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFileGenericoSoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadFileGenerico" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFileGenericoSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadFileGenericoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserNameXIdPrevencionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserNameXIdPrevencion" />
+  </wsdl:message>
+  <wsdl:message name="GetUserNameXIdPrevencionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserNameXIdPrevencionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIdUsuarioPrevencionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIdUsuarioPrevencion" />
+  </wsdl:message>
+  <wsdl:message name="GetIdUsuarioPrevencionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIdUsuarioPrevencionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizaEstadoOrdenCompraSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizaEstadoOrdenCompra" />
+  </wsdl:message>
+  <wsdl:message name="ActualizaEstadoOrdenCompraSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizaEstadoOrdenCompraResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsPerfilVoluntarioSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsPerfilVoluntario" />
+  </wsdl:message>
+  <wsdl:message name="ConsPerfilVoluntarioSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsPerfilVoluntarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenerarDirectorioSoapIn">
+    <wsdl:part name="parameters" element="tns:GenerarDirectorio" />
+  </wsdl:message>
+  <wsdl:message name="GenerarDirectorioSoapOut">
+    <wsdl:part name="parameters" element="tns:GenerarDirectorioResponse" />
+  </wsdl:message>
+  <wsdl:message name="CopiarContenidoDirectorioSoapIn">
+    <wsdl:part name="parameters" element="tns:CopiarContenidoDirectorio" />
+  </wsdl:message>
+  <wsdl:message name="CopiarContenidoDirectorioSoapOut">
+    <wsdl:part name="parameters" element="tns:CopiarContenidoDirectorioResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpGetIn" />
+  <wsdl:message name="HelloWorldHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenTalentoHumanoHttpGetIn">
+    <wsdl:part name="image" type="s:string" />
+    <wsdl:part name="imagename" type="s:string" />
+    <wsdl:part name="ext" type="s:string" />
+    <wsdl:part name="idrecurso_humano" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenTalentoHumanoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenPublicacionesHttpGetIn">
+    <wsdl:part name="image" type="s:string" />
+    <wsdl:part name="imagename" type="s:string" />
+    <wsdl:part name="ext" type="s:string" />
+    <wsdl:part name="idPublicacion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenPublicacionesHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenEmergenciasHttpGetIn">
+    <wsdl:part name="image" type="s:string" />
+    <wsdl:part name="imagename" type="s:string" />
+    <wsdl:part name="ext" type="s:string" />
+    <wsdl:part name="idEmergencia" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenEmergenciasHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenInspeccionesHttpGetIn">
+    <wsdl:part name="image" type="s:string" />
+    <wsdl:part name="imagename" type="s:string" />
+    <wsdl:part name="ext" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenInspeccionesHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenFichaVoluntarioHttpGetIn">
+    <wsdl:part name="image" type="s:string" />
+    <wsdl:part name="imagename" type="s:string" />
+    <wsdl:part name="ext" type="s:string" />
+    <wsdl:part name="CurseName" type="s:string" />
+    <wsdl:part name="idVoluntario" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenFichaVoluntarioHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarPDFGenericoHttpGetIn">
+    <wsdl:part name="pathPrincipal" type="s:string" />
+    <wsdl:part name="image" type="s:string" />
+    <wsdl:part name="docname" type="s:string" />
+    <wsdl:part name="ext" type="s:string" />
+    <wsdl:part name="key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarPDFGenericoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarArchivosDIPHttpGetIn">
+    <wsdl:part name="pathPrincipal" type="s:string" />
+    <wsdl:part name="file_name" type="s:string" />
+    <wsdl:part name="contenido" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarArchivosDIPHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarPDFProcedimientosHttpGetIn">
+    <wsdl:part name="image" type="s:string" />
+    <wsdl:part name="imagename" type="s:string" />
+    <wsdl:part name="ext" type="s:string" />
+    <wsdl:part name="idProcedimiento" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarPDFProcedimientosHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarFileTempHttpGetIn">
+    <wsdl:part name="image" type="s:string" />
+    <wsdl:part name="imagename" type="s:string" />
+    <wsdl:part name="ext" type="s:string" />
+    <wsdl:part name="key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarFileTempHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenProcedimientosHttpGetIn">
+    <wsdl:part name="image" type="s:string" />
+    <wsdl:part name="imagename" type="s:string" />
+    <wsdl:part name="ext" type="s:string" />
+    <wsdl:part name="idProcedimiento" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenProcedimientosHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenFormulariosFSOHttpGetIn">
+    <wsdl:part name="image" type="s:string" />
+    <wsdl:part name="imagename" type="s:string" />
+    <wsdl:part name="ext" type="s:string" />
+    <wsdl:part name="idFormulario" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenFormulariosFSOHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenFormulariosArchHttpGetIn">
+    <wsdl:part name="image" type="s:string" />
+    <wsdl:part name="imagename" type="s:string" />
+    <wsdl:part name="ext" type="s:string" />
+    <wsdl:part name="idFormulario" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenFormulariosArchHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenHttpGetIn">
+    <wsdl:part name="image" type="s:string" />
+    <wsdl:part name="imagename" type="s:string" />
+    <wsdl:part name="ext" type="s:string" />
+    <wsdl:part name="TipoDoc" type="s:string" />
+    <wsdl:part name="idEstablecimiento" type="s:string" />
+    <wsdl:part name="IdDeclaracion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarPDFEstablecimientosHttpGetIn">
+    <wsdl:part name="image" type="s:string" />
+    <wsdl:part name="imagename" type="s:string" />
+    <wsdl:part name="dir_anio" type="s:string" />
+    <wsdl:part name="dir_mes" type="s:string" />
+    <wsdl:part name="dir_dia" type="s:string" />
+    <wsdl:part name="ext" type="s:string" />
+    <wsdl:part name="TipoDoc" type="s:string" />
+    <wsdl:part name="idEstablecimiento" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarPDFEstablecimientosHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenXModificacionHttpGetIn">
+    <wsdl:part name="image" type="s:string" />
+    <wsdl:part name="imagename" type="s:string" />
+    <wsdl:part name="dir_anio" type="s:string" />
+    <wsdl:part name="dir_mes" type="s:string" />
+    <wsdl:part name="dir_dia" type="s:string" />
+    <wsdl:part name="ext" type="s:string" />
+    <wsdl:part name="TipoDoc" type="s:string" />
+    <wsdl:part name="idEstablecimiento" type="s:string" />
+    <wsdl:part name="IdDeclaracion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenXModificacionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFileHttpGetIn">
+    <wsdl:part name="FName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFileHttpGetOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFileGenericoHttpGetIn">
+    <wsdl:part name="FName" type="s:string" />
+    <wsdl:part name="NameApp" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFileGenericoHttpGetOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="GetUserNameXIdPrevencionHttpGetIn">
+    <wsdl:part name="idusuario" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserNameXIdPrevencionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIdUsuarioPrevencionHttpGetIn">
+    <wsdl:part name="cedula" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIdUsuarioPrevencionHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="ActualizaEstadoOrdenCompraHttpGetIn">
+    <wsdl:part name="num_orden" type="s:string" />
+    <wsdl:part name="new_estado" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ActualizaEstadoOrdenCompraHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ConsPerfilVoluntarioHttpGetIn">
+    <wsdl:part name="cedula" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsPerfilVoluntarioHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GenerarDirectorioHttpGetIn">
+    <wsdl:part name="path" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GenerarDirectorioHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="CopiarContenidoDirectorioHttpGetIn">
+    <wsdl:part name="sourceFile" type="s:string" />
+    <wsdl:part name="destFile" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CopiarContenidoDirectorioHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpPostIn" />
+  <wsdl:message name="HelloWorldHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenTalentoHumanoHttpPostIn">
+    <wsdl:part name="image" type="s:string" />
+    <wsdl:part name="imagename" type="s:string" />
+    <wsdl:part name="ext" type="s:string" />
+    <wsdl:part name="idrecurso_humano" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenTalentoHumanoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenPublicacionesHttpPostIn">
+    <wsdl:part name="image" type="s:string" />
+    <wsdl:part name="imagename" type="s:string" />
+    <wsdl:part name="ext" type="s:string" />
+    <wsdl:part name="idPublicacion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenPublicacionesHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenEmergenciasHttpPostIn">
+    <wsdl:part name="image" type="s:string" />
+    <wsdl:part name="imagename" type="s:string" />
+    <wsdl:part name="ext" type="s:string" />
+    <wsdl:part name="idEmergencia" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenEmergenciasHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenInspeccionesHttpPostIn">
+    <wsdl:part name="image" type="s:string" />
+    <wsdl:part name="imagename" type="s:string" />
+    <wsdl:part name="ext" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenInspeccionesHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenFichaVoluntarioHttpPostIn">
+    <wsdl:part name="image" type="s:string" />
+    <wsdl:part name="imagename" type="s:string" />
+    <wsdl:part name="ext" type="s:string" />
+    <wsdl:part name="CurseName" type="s:string" />
+    <wsdl:part name="idVoluntario" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenFichaVoluntarioHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarPDFGenericoHttpPostIn">
+    <wsdl:part name="pathPrincipal" type="s:string" />
+    <wsdl:part name="image" type="s:string" />
+    <wsdl:part name="docname" type="s:string" />
+    <wsdl:part name="ext" type="s:string" />
+    <wsdl:part name="key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarPDFGenericoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarArchivosDIPHttpPostIn">
+    <wsdl:part name="pathPrincipal" type="s:string" />
+    <wsdl:part name="file_name" type="s:string" />
+    <wsdl:part name="contenido" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarArchivosDIPHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarPDFProcedimientosHttpPostIn">
+    <wsdl:part name="image" type="s:string" />
+    <wsdl:part name="imagename" type="s:string" />
+    <wsdl:part name="ext" type="s:string" />
+    <wsdl:part name="idProcedimiento" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarPDFProcedimientosHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarFileTempHttpPostIn">
+    <wsdl:part name="image" type="s:string" />
+    <wsdl:part name="imagename" type="s:string" />
+    <wsdl:part name="ext" type="s:string" />
+    <wsdl:part name="key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarFileTempHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenProcedimientosHttpPostIn">
+    <wsdl:part name="image" type="s:string" />
+    <wsdl:part name="imagename" type="s:string" />
+    <wsdl:part name="ext" type="s:string" />
+    <wsdl:part name="idProcedimiento" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenProcedimientosHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenFormulariosFSOHttpPostIn">
+    <wsdl:part name="image" type="s:string" />
+    <wsdl:part name="imagename" type="s:string" />
+    <wsdl:part name="ext" type="s:string" />
+    <wsdl:part name="idFormulario" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenFormulariosFSOHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenFormulariosArchHttpPostIn">
+    <wsdl:part name="image" type="s:string" />
+    <wsdl:part name="imagename" type="s:string" />
+    <wsdl:part name="ext" type="s:string" />
+    <wsdl:part name="idFormulario" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenFormulariosArchHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenHttpPostIn">
+    <wsdl:part name="image" type="s:string" />
+    <wsdl:part name="imagename" type="s:string" />
+    <wsdl:part name="ext" type="s:string" />
+    <wsdl:part name="TipoDoc" type="s:string" />
+    <wsdl:part name="idEstablecimiento" type="s:string" />
+    <wsdl:part name="IdDeclaracion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarPDFEstablecimientosHttpPostIn">
+    <wsdl:part name="image" type="s:string" />
+    <wsdl:part name="imagename" type="s:string" />
+    <wsdl:part name="dir_anio" type="s:string" />
+    <wsdl:part name="dir_mes" type="s:string" />
+    <wsdl:part name="dir_dia" type="s:string" />
+    <wsdl:part name="ext" type="s:string" />
+    <wsdl:part name="TipoDoc" type="s:string" />
+    <wsdl:part name="idEstablecimiento" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarPDFEstablecimientosHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenXModificacionHttpPostIn">
+    <wsdl:part name="image" type="s:string" />
+    <wsdl:part name="imagename" type="s:string" />
+    <wsdl:part name="dir_anio" type="s:string" />
+    <wsdl:part name="dir_mes" type="s:string" />
+    <wsdl:part name="dir_dia" type="s:string" />
+    <wsdl:part name="ext" type="s:string" />
+    <wsdl:part name="TipoDoc" type="s:string" />
+    <wsdl:part name="idEstablecimiento" type="s:string" />
+    <wsdl:part name="IdDeclaracion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenXModificacionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFileHttpPostIn">
+    <wsdl:part name="FName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFileHttpPostOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFileGenericoHttpPostIn">
+    <wsdl:part name="FName" type="s:string" />
+    <wsdl:part name="NameApp" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFileGenericoHttpPostOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="GetUserNameXIdPrevencionHttpPostIn">
+    <wsdl:part name="idusuario" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserNameXIdPrevencionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIdUsuarioPrevencionHttpPostIn">
+    <wsdl:part name="cedula" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIdUsuarioPrevencionHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="ActualizaEstadoOrdenCompraHttpPostIn">
+    <wsdl:part name="num_orden" type="s:string" />
+    <wsdl:part name="new_estado" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ActualizaEstadoOrdenCompraHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ConsPerfilVoluntarioHttpPostIn">
+    <wsdl:part name="cedula" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsPerfilVoluntarioHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GenerarDirectorioHttpPostIn">
+    <wsdl:part name="path" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GenerarDirectorioHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="CopiarContenidoDirectorioHttpPostIn">
+    <wsdl:part name="sourceFile" type="s:string" />
+    <wsdl:part name="destFile" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CopiarContenidoDirectorioHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceEmptySoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenTalentoHumano">
+      <wsdl:input message="tns:GuardarImagenTalentoHumanoSoapIn" />
+      <wsdl:output message="tns:GuardarImagenTalentoHumanoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenPublicaciones">
+      <wsdl:input message="tns:GuardarImagenPublicacionesSoapIn" />
+      <wsdl:output message="tns:GuardarImagenPublicacionesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenEmergencias">
+      <wsdl:input message="tns:GuardarImagenEmergenciasSoapIn" />
+      <wsdl:output message="tns:GuardarImagenEmergenciasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenInspecciones">
+      <wsdl:input message="tns:GuardarImagenInspeccionesSoapIn" />
+      <wsdl:output message="tns:GuardarImagenInspeccionesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenFichaVoluntario">
+      <wsdl:input message="tns:GuardarImagenFichaVoluntarioSoapIn" />
+      <wsdl:output message="tns:GuardarImagenFichaVoluntarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarPDFGenerico">
+      <wsdl:input message="tns:GuardarPDFGenericoSoapIn" />
+      <wsdl:output message="tns:GuardarPDFGenericoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarArchivosDIP">
+      <wsdl:input message="tns:GuardarArchivosDIPSoapIn" />
+      <wsdl:output message="tns:GuardarArchivosDIPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarPDFProcedimientos">
+      <wsdl:input message="tns:GuardarPDFProcedimientosSoapIn" />
+      <wsdl:output message="tns:GuardarPDFProcedimientosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarFileTemp">
+      <wsdl:input message="tns:GuardarFileTempSoapIn" />
+      <wsdl:output message="tns:GuardarFileTempSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenProcedimientos">
+      <wsdl:input message="tns:GuardarImagenProcedimientosSoapIn" />
+      <wsdl:output message="tns:GuardarImagenProcedimientosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenFormulariosFSO">
+      <wsdl:input message="tns:GuardarImagenFormulariosFSOSoapIn" />
+      <wsdl:output message="tns:GuardarImagenFormulariosFSOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenFormulariosArch">
+      <wsdl:input message="tns:GuardarImagenFormulariosArchSoapIn" />
+      <wsdl:output message="tns:GuardarImagenFormulariosArchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagen">
+      <wsdl:input message="tns:GuardarImagenSoapIn" />
+      <wsdl:output message="tns:GuardarImagenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarPDFEstablecimientos">
+      <wsdl:input message="tns:GuardarPDFEstablecimientosSoapIn" />
+      <wsdl:output message="tns:GuardarPDFEstablecimientosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenXModificacion">
+      <wsdl:input message="tns:GuardarImagenXModificacionSoapIn" />
+      <wsdl:output message="tns:GuardarImagenXModificacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <wsdl:input message="tns:DownloadFileSoapIn" />
+      <wsdl:output message="tns:DownloadFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFileGenerico">
+      <wsdl:input message="tns:DownloadFileGenericoSoapIn" />
+      <wsdl:output message="tns:DownloadFileGenericoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserNameXIdPrevencion">
+      <wsdl:input message="tns:GetUserNameXIdPrevencionSoapIn" />
+      <wsdl:output message="tns:GetUserNameXIdPrevencionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIdUsuarioPrevencion">
+      <wsdl:input message="tns:GetIdUsuarioPrevencionSoapIn" />
+      <wsdl:output message="tns:GetIdUsuarioPrevencionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaEstadoOrdenCompra">
+      <wsdl:input message="tns:ActualizaEstadoOrdenCompraSoapIn" />
+      <wsdl:output message="tns:ActualizaEstadoOrdenCompraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsPerfilVoluntario">
+      <wsdl:input message="tns:ConsPerfilVoluntarioSoapIn" />
+      <wsdl:output message="tns:ConsPerfilVoluntarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerarDirectorio">
+      <wsdl:input message="tns:GenerarDirectorioSoapIn" />
+      <wsdl:output message="tns:GenerarDirectorioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CopiarContenidoDirectorio">
+      <wsdl:input message="tns:CopiarContenidoDirectorioSoapIn" />
+      <wsdl:output message="tns:CopiarContenidoDirectorioSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WebServiceEmptyHttpGet">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpGetIn" />
+      <wsdl:output message="tns:HelloWorldHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenTalentoHumano">
+      <wsdl:input message="tns:GuardarImagenTalentoHumanoHttpGetIn" />
+      <wsdl:output message="tns:GuardarImagenTalentoHumanoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenPublicaciones">
+      <wsdl:input message="tns:GuardarImagenPublicacionesHttpGetIn" />
+      <wsdl:output message="tns:GuardarImagenPublicacionesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenEmergencias">
+      <wsdl:input message="tns:GuardarImagenEmergenciasHttpGetIn" />
+      <wsdl:output message="tns:GuardarImagenEmergenciasHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenInspecciones">
+      <wsdl:input message="tns:GuardarImagenInspeccionesHttpGetIn" />
+      <wsdl:output message="tns:GuardarImagenInspeccionesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenFichaVoluntario">
+      <wsdl:input message="tns:GuardarImagenFichaVoluntarioHttpGetIn" />
+      <wsdl:output message="tns:GuardarImagenFichaVoluntarioHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarPDFGenerico">
+      <wsdl:input message="tns:GuardarPDFGenericoHttpGetIn" />
+      <wsdl:output message="tns:GuardarPDFGenericoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarArchivosDIP">
+      <wsdl:input message="tns:GuardarArchivosDIPHttpGetIn" />
+      <wsdl:output message="tns:GuardarArchivosDIPHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarPDFProcedimientos">
+      <wsdl:input message="tns:GuardarPDFProcedimientosHttpGetIn" />
+      <wsdl:output message="tns:GuardarPDFProcedimientosHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarFileTemp">
+      <wsdl:input message="tns:GuardarFileTempHttpGetIn" />
+      <wsdl:output message="tns:GuardarFileTempHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenProcedimientos">
+      <wsdl:input message="tns:GuardarImagenProcedimientosHttpGetIn" />
+      <wsdl:output message="tns:GuardarImagenProcedimientosHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenFormulariosFSO">
+      <wsdl:input message="tns:GuardarImagenFormulariosFSOHttpGetIn" />
+      <wsdl:output message="tns:GuardarImagenFormulariosFSOHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenFormulariosArch">
+      <wsdl:input message="tns:GuardarImagenFormulariosArchHttpGetIn" />
+      <wsdl:output message="tns:GuardarImagenFormulariosArchHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagen">
+      <wsdl:input message="tns:GuardarImagenHttpGetIn" />
+      <wsdl:output message="tns:GuardarImagenHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarPDFEstablecimientos">
+      <wsdl:input message="tns:GuardarPDFEstablecimientosHttpGetIn" />
+      <wsdl:output message="tns:GuardarPDFEstablecimientosHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenXModificacion">
+      <wsdl:input message="tns:GuardarImagenXModificacionHttpGetIn" />
+      <wsdl:output message="tns:GuardarImagenXModificacionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <wsdl:input message="tns:DownloadFileHttpGetIn" />
+      <wsdl:output message="tns:DownloadFileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFileGenerico">
+      <wsdl:input message="tns:DownloadFileGenericoHttpGetIn" />
+      <wsdl:output message="tns:DownloadFileGenericoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserNameXIdPrevencion">
+      <wsdl:input message="tns:GetUserNameXIdPrevencionHttpGetIn" />
+      <wsdl:output message="tns:GetUserNameXIdPrevencionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIdUsuarioPrevencion">
+      <wsdl:input message="tns:GetIdUsuarioPrevencionHttpGetIn" />
+      <wsdl:output message="tns:GetIdUsuarioPrevencionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaEstadoOrdenCompra">
+      <wsdl:input message="tns:ActualizaEstadoOrdenCompraHttpGetIn" />
+      <wsdl:output message="tns:ActualizaEstadoOrdenCompraHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsPerfilVoluntario">
+      <wsdl:input message="tns:ConsPerfilVoluntarioHttpGetIn" />
+      <wsdl:output message="tns:ConsPerfilVoluntarioHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerarDirectorio">
+      <wsdl:input message="tns:GenerarDirectorioHttpGetIn" />
+      <wsdl:output message="tns:GenerarDirectorioHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CopiarContenidoDirectorio">
+      <wsdl:input message="tns:CopiarContenidoDirectorioHttpGetIn" />
+      <wsdl:output message="tns:CopiarContenidoDirectorioHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WebServiceEmptyHttpPost">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpPostIn" />
+      <wsdl:output message="tns:HelloWorldHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenTalentoHumano">
+      <wsdl:input message="tns:GuardarImagenTalentoHumanoHttpPostIn" />
+      <wsdl:output message="tns:GuardarImagenTalentoHumanoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenPublicaciones">
+      <wsdl:input message="tns:GuardarImagenPublicacionesHttpPostIn" />
+      <wsdl:output message="tns:GuardarImagenPublicacionesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenEmergencias">
+      <wsdl:input message="tns:GuardarImagenEmergenciasHttpPostIn" />
+      <wsdl:output message="tns:GuardarImagenEmergenciasHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenInspecciones">
+      <wsdl:input message="tns:GuardarImagenInspeccionesHttpPostIn" />
+      <wsdl:output message="tns:GuardarImagenInspeccionesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenFichaVoluntario">
+      <wsdl:input message="tns:GuardarImagenFichaVoluntarioHttpPostIn" />
+      <wsdl:output message="tns:GuardarImagenFichaVoluntarioHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarPDFGenerico">
+      <wsdl:input message="tns:GuardarPDFGenericoHttpPostIn" />
+      <wsdl:output message="tns:GuardarPDFGenericoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarArchivosDIP">
+      <wsdl:input message="tns:GuardarArchivosDIPHttpPostIn" />
+      <wsdl:output message="tns:GuardarArchivosDIPHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarPDFProcedimientos">
+      <wsdl:input message="tns:GuardarPDFProcedimientosHttpPostIn" />
+      <wsdl:output message="tns:GuardarPDFProcedimientosHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarFileTemp">
+      <wsdl:input message="tns:GuardarFileTempHttpPostIn" />
+      <wsdl:output message="tns:GuardarFileTempHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenProcedimientos">
+      <wsdl:input message="tns:GuardarImagenProcedimientosHttpPostIn" />
+      <wsdl:output message="tns:GuardarImagenProcedimientosHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenFormulariosFSO">
+      <wsdl:input message="tns:GuardarImagenFormulariosFSOHttpPostIn" />
+      <wsdl:output message="tns:GuardarImagenFormulariosFSOHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenFormulariosArch">
+      <wsdl:input message="tns:GuardarImagenFormulariosArchHttpPostIn" />
+      <wsdl:output message="tns:GuardarImagenFormulariosArchHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagen">
+      <wsdl:input message="tns:GuardarImagenHttpPostIn" />
+      <wsdl:output message="tns:GuardarImagenHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarPDFEstablecimientos">
+      <wsdl:input message="tns:GuardarPDFEstablecimientosHttpPostIn" />
+      <wsdl:output message="tns:GuardarPDFEstablecimientosHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenXModificacion">
+      <wsdl:input message="tns:GuardarImagenXModificacionHttpPostIn" />
+      <wsdl:output message="tns:GuardarImagenXModificacionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <wsdl:input message="tns:DownloadFileHttpPostIn" />
+      <wsdl:output message="tns:DownloadFileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFileGenerico">
+      <wsdl:input message="tns:DownloadFileGenericoHttpPostIn" />
+      <wsdl:output message="tns:DownloadFileGenericoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserNameXIdPrevencion">
+      <wsdl:input message="tns:GetUserNameXIdPrevencionHttpPostIn" />
+      <wsdl:output message="tns:GetUserNameXIdPrevencionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIdUsuarioPrevencion">
+      <wsdl:input message="tns:GetIdUsuarioPrevencionHttpPostIn" />
+      <wsdl:output message="tns:GetIdUsuarioPrevencionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaEstadoOrdenCompra">
+      <wsdl:input message="tns:ActualizaEstadoOrdenCompraHttpPostIn" />
+      <wsdl:output message="tns:ActualizaEstadoOrdenCompraHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsPerfilVoluntario">
+      <wsdl:input message="tns:ConsPerfilVoluntarioHttpPostIn" />
+      <wsdl:output message="tns:ConsPerfilVoluntarioHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerarDirectorio">
+      <wsdl:input message="tns:GenerarDirectorioHttpPostIn" />
+      <wsdl:output message="tns:GenerarDirectorioHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CopiarContenidoDirectorio">
+      <wsdl:input message="tns:CopiarContenidoDirectorioHttpPostIn" />
+      <wsdl:output message="tns:CopiarContenidoDirectorioHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceEmptySoap" type="tns:WebServiceEmptySoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenTalentoHumano">
+      <soap:operation soapAction="http://tempuri.org/GuardarImagenTalentoHumano" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenPublicaciones">
+      <soap:operation soapAction="http://tempuri.org/GuardarImagenPublicaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenEmergencias">
+      <soap:operation soapAction="http://tempuri.org/GuardarImagenEmergencias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenInspecciones">
+      <soap:operation soapAction="http://tempuri.org/GuardarImagenInspecciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenFichaVoluntario">
+      <soap:operation soapAction="http://tempuri.org/GuardarImagenFichaVoluntario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarPDFGenerico">
+      <soap:operation soapAction="http://tempuri.org/GuardarPDFGenerico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarArchivosDIP">
+      <soap:operation soapAction="http://tempuri.org/GuardarArchivosDIP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarPDFProcedimientos">
+      <soap:operation soapAction="http://tempuri.org/GuardarPDFProcedimientos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarFileTemp">
+      <soap:operation soapAction="http://tempuri.org/GuardarFileTemp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenProcedimientos">
+      <soap:operation soapAction="http://tempuri.org/GuardarImagenProcedimientos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenFormulariosFSO">
+      <soap:operation soapAction="http://tempuri.org/GuardarImagenFormulariosFSO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenFormulariosArch">
+      <soap:operation soapAction="http://tempuri.org/GuardarImagenFormulariosArch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagen">
+      <soap:operation soapAction="http://tempuri.org/GuardarImagen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarPDFEstablecimientos">
+      <soap:operation soapAction="http://tempuri.org/GuardarPDFEstablecimientos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenXModificacion">
+      <soap:operation soapAction="http://tempuri.org/GuardarImagenXModificacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <soap:operation soapAction="http://tempuri.org/DownloadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFileGenerico">
+      <soap:operation soapAction="http://tempuri.org/DownloadFileGenerico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserNameXIdPrevencion">
+      <soap:operation soapAction="http://tempuri.org/GetUserNameXIdPrevencion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIdUsuarioPrevencion">
+      <soap:operation soapAction="http://tempuri.org/GetIdUsuarioPrevencion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaEstadoOrdenCompra">
+      <soap:operation soapAction="http://tempuri.org/ActualizaEstadoOrdenCompra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsPerfilVoluntario">
+      <soap:operation soapAction="http://tempuri.org/ConsPerfilVoluntario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarDirectorio">
+      <soap:operation soapAction="http://tempuri.org/GenerarDirectorio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopiarContenidoDirectorio">
+      <soap:operation soapAction="http://tempuri.org/CopiarContenidoDirectorio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceEmptySoap12" type="tns:WebServiceEmptySoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenTalentoHumano">
+      <soap12:operation soapAction="http://tempuri.org/GuardarImagenTalentoHumano" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenPublicaciones">
+      <soap12:operation soapAction="http://tempuri.org/GuardarImagenPublicaciones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenEmergencias">
+      <soap12:operation soapAction="http://tempuri.org/GuardarImagenEmergencias" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenInspecciones">
+      <soap12:operation soapAction="http://tempuri.org/GuardarImagenInspecciones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenFichaVoluntario">
+      <soap12:operation soapAction="http://tempuri.org/GuardarImagenFichaVoluntario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarPDFGenerico">
+      <soap12:operation soapAction="http://tempuri.org/GuardarPDFGenerico" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarArchivosDIP">
+      <soap12:operation soapAction="http://tempuri.org/GuardarArchivosDIP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarPDFProcedimientos">
+      <soap12:operation soapAction="http://tempuri.org/GuardarPDFProcedimientos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarFileTemp">
+      <soap12:operation soapAction="http://tempuri.org/GuardarFileTemp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenProcedimientos">
+      <soap12:operation soapAction="http://tempuri.org/GuardarImagenProcedimientos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenFormulariosFSO">
+      <soap12:operation soapAction="http://tempuri.org/GuardarImagenFormulariosFSO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenFormulariosArch">
+      <soap12:operation soapAction="http://tempuri.org/GuardarImagenFormulariosArch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagen">
+      <soap12:operation soapAction="http://tempuri.org/GuardarImagen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarPDFEstablecimientos">
+      <soap12:operation soapAction="http://tempuri.org/GuardarPDFEstablecimientos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenXModificacion">
+      <soap12:operation soapAction="http://tempuri.org/GuardarImagenXModificacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <soap12:operation soapAction="http://tempuri.org/DownloadFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFileGenerico">
+      <soap12:operation soapAction="http://tempuri.org/DownloadFileGenerico" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserNameXIdPrevencion">
+      <soap12:operation soapAction="http://tempuri.org/GetUserNameXIdPrevencion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIdUsuarioPrevencion">
+      <soap12:operation soapAction="http://tempuri.org/GetIdUsuarioPrevencion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaEstadoOrdenCompra">
+      <soap12:operation soapAction="http://tempuri.org/ActualizaEstadoOrdenCompra" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsPerfilVoluntario">
+      <soap12:operation soapAction="http://tempuri.org/ConsPerfilVoluntario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarDirectorio">
+      <soap12:operation soapAction="http://tempuri.org/GenerarDirectorio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopiarContenidoDirectorio">
+      <soap12:operation soapAction="http://tempuri.org/CopiarContenidoDirectorio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceEmptyHttpGet" type="tns:WebServiceEmptyHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenTalentoHumano">
+      <http:operation location="/GuardarImagenTalentoHumano" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenPublicaciones">
+      <http:operation location="/GuardarImagenPublicaciones" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenEmergencias">
+      <http:operation location="/GuardarImagenEmergencias" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenInspecciones">
+      <http:operation location="/GuardarImagenInspecciones" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenFichaVoluntario">
+      <http:operation location="/GuardarImagenFichaVoluntario" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarPDFGenerico">
+      <http:operation location="/GuardarPDFGenerico" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarArchivosDIP">
+      <http:operation location="/GuardarArchivosDIP" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarPDFProcedimientos">
+      <http:operation location="/GuardarPDFProcedimientos" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarFileTemp">
+      <http:operation location="/GuardarFileTemp" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenProcedimientos">
+      <http:operation location="/GuardarImagenProcedimientos" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenFormulariosFSO">
+      <http:operation location="/GuardarImagenFormulariosFSO" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenFormulariosArch">
+      <http:operation location="/GuardarImagenFormulariosArch" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagen">
+      <http:operation location="/GuardarImagen" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarPDFEstablecimientos">
+      <http:operation location="/GuardarPDFEstablecimientos" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenXModificacion">
+      <http:operation location="/GuardarImagenXModificacion" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <http:operation location="/DownloadFile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFileGenerico">
+      <http:operation location="/DownloadFileGenerico" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserNameXIdPrevencion">
+      <http:operation location="/GetUserNameXIdPrevencion" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIdUsuarioPrevencion">
+      <http:operation location="/GetIdUsuarioPrevencion" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaEstadoOrdenCompra">
+      <http:operation location="/ActualizaEstadoOrdenCompra" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsPerfilVoluntario">
+      <http:operation location="/ConsPerfilVoluntario" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarDirectorio">
+      <http:operation location="/GenerarDirectorio" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopiarContenidoDirectorio">
+      <http:operation location="/CopiarContenidoDirectorio" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceEmptyHttpPost" type="tns:WebServiceEmptyHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenTalentoHumano">
+      <http:operation location="/GuardarImagenTalentoHumano" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenPublicaciones">
+      <http:operation location="/GuardarImagenPublicaciones" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenEmergencias">
+      <http:operation location="/GuardarImagenEmergencias" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenInspecciones">
+      <http:operation location="/GuardarImagenInspecciones" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenFichaVoluntario">
+      <http:operation location="/GuardarImagenFichaVoluntario" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarPDFGenerico">
+      <http:operation location="/GuardarPDFGenerico" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarArchivosDIP">
+      <http:operation location="/GuardarArchivosDIP" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarPDFProcedimientos">
+      <http:operation location="/GuardarPDFProcedimientos" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarFileTemp">
+      <http:operation location="/GuardarFileTemp" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenProcedimientos">
+      <http:operation location="/GuardarImagenProcedimientos" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenFormulariosFSO">
+      <http:operation location="/GuardarImagenFormulariosFSO" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenFormulariosArch">
+      <http:operation location="/GuardarImagenFormulariosArch" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagen">
+      <http:operation location="/GuardarImagen" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarPDFEstablecimientos">
+      <http:operation location="/GuardarPDFEstablecimientos" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenXModificacion">
+      <http:operation location="/GuardarImagenXModificacion" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <http:operation location="/DownloadFile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFileGenerico">
+      <http:operation location="/DownloadFileGenerico" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserNameXIdPrevencion">
+      <http:operation location="/GetUserNameXIdPrevencion" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIdUsuarioPrevencion">
+      <http:operation location="/GetIdUsuarioPrevencion" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaEstadoOrdenCompra">
+      <http:operation location="/ActualizaEstadoOrdenCompra" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsPerfilVoluntario">
+      <http:operation location="/ConsPerfilVoluntario" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarDirectorio">
+      <http:operation location="/GenerarDirectorio" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopiarContenidoDirectorio">
+      <http:operation location="/CopiarContenidoDirectorio" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceEmpty">
+    <wsdl:port name="WebServiceEmptySoap" binding="tns:WebServiceEmptySoap">
+      <soap:address location="http://192.168.4.11:120/webserviceempty.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceEmptySoap12" binding="tns:WebServiceEmptySoap12">
+      <soap12:address location="http://192.168.4.11:120/webserviceempty.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceEmptyHttpGet" binding="tns:WebServiceEmptyHttpGet">
+      <http:address location="http://192.168.4.11:120/webserviceempty.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceEmptyHttpPost" binding="tns:WebServiceEmptyHttpPost">
+      <http:address location="http://192.168.4.11:120/webserviceempty.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
